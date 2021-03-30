@@ -41,7 +41,12 @@ res.json({"message": response});
 app.get("/:word/echo", function(req, res){
  res.json({"echo": req.params.word});})
 
+var handler = function (req, res) {
+  var response = req.query.firstname + " " + req.query.lastname;
+  res.json({"name": response});};
 
+
+app.route("/name").get(handler).post(handler);
 
 
 
