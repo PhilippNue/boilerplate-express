@@ -38,6 +38,9 @@ if (process.env.MESSAGE_STYLE === "uppercase") {
 res.json({"message": response});
 });
 
+app.get("/:word/echo", function(req, res){
+ res.json({"echo": req.params.word});})
+
 
 
 
