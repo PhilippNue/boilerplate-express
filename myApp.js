@@ -42,7 +42,7 @@ app.get("/:word/echo", function(req, res){
  res.json({"echo": req.params.word});})
 
 var handler = function (req, res) {
-  var response = req.query.firstname + " " + req.query.lastname;
+  var response = req.query.first + " " + req.query.last;
   res.json({"name": response});};
 
 
