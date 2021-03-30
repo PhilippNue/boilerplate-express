@@ -3,6 +3,10 @@ var express = require('express');
 var app = express();
 
 app.use(express.static(__dirname + "/public"));
+app.use(function(req, rep,next){
+    console.log(req.method + " " + req.path + " - " + req.ip);
+    next();
+})
 app.use("/public", express.static(__dirname + "/public"));
 
 var absolutePath = __dirname + '/views/index.html';
