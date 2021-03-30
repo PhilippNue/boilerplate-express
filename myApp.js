@@ -43,7 +43,15 @@ app.get("/:word/echo", function(req, res){
  res.json({"echo": req.params.word});})
 
 var handler = function (req, res) {
-  var response = req.query.first + " " + req.query.last;
+    var response
+    if(req.method === "GET")
+    {
+        response = req.query.first + " " + req.query.last;
+    }else
+    {
+        response = req.body.first + " " + req.body.last;
+    }
+
   res.json({"name": response});};
 
 
